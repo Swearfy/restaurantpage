@@ -86,7 +86,7 @@ button span {
   position: relative;
 }
 
-.header {
+#header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -119,7 +119,6 @@ button span {
   justify-content: center;
   height: 90svh;
   height: 90vh;
-  position: relative;
   padding: 20px 40px;
 }
 
@@ -146,10 +145,11 @@ button span {
 
 #contactUsPage {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  position: relative;
   width: 100%;
   height: 100%;
+  gap: 1rem;
+
+  grid-template-columns: 1fr 0.8fr;
   padding: 1.5rem 2rem;
 
   h1 {
@@ -159,26 +159,107 @@ button span {
 
   div {
     display: grid;
-    align-content: center;
   }
 
   img {
-    object-fit: cover;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1/1;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     border: 2px solid black;
   }
 
-  form {
-    padding: 2.5rem;
-  }
-
   .contacts {
     display: grid;
+    align-items: center;
+    grid-template-rows: 0.5fr 1fr;
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+
+      .address-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+    }
+
+    .socials {
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+      a {
+        color: whitesmoke;
+      }
+    }
   }
 
-  .socials {
+  .form-container {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: column;
+    gap: 16px;
+
+    form {
+      padding: 2rem 1.5rem;
+      display: grid;
+      gap: 20px;
+      width: 800px;
+      align-self: center;
+      background-color: rgba($color: #000000, $alpha: 0.4);
+
+      div {
+        display: grid;
+        gap: 16px;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      button {
+        justify-self: center;
+        width: 50%;
+        max-width: 360px;
+      }
+    }
+  }
+}
+
+#menuPage {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 40px;
+  justify-items: center;
+
+  h1 {
+    font-size: $h1-size;
+  }
+
+  .menuBox {
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+    font-size: $font-size;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background-color: rgba($color: #000000, $alpha: 0.7);
+      width: 100%;
+      padding: 40px 20px 10px 20px;
+    }
   }
 }
