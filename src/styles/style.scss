@@ -98,6 +98,10 @@ button span {
     font-family: "Oswald-Bold";
   }
 
+  .active {
+    background-color: $accent-color;
+  }
+
   nav {
     font-size: $header-font-size;
     display: grid;
