@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "OsWald-bold";
+  src: url("../fonts/Oswald-Bold.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OsWald-light";
+  src: url("../fonts/Oswald-Light.ttf");
+  font-style: normal;
+}
+
+$primary-color: #fcbf49;
+$secondary-color: #f77f00;
+$accent-color: #d62828;
+$background-color: #eae2b7;
+$h1-size: 2rem;
+$font-size: 1.2rem;
+$header-font-size: 1.9rem;
+
+body {
+  margin: auto;
+  font-family: "OsWald-light";
+  background: url("../assets/background.jpg") no-repeat fixed center;
+  background-size: cover;
+  background-color: rgb(73, 72, 72);
+  background-blend-mode: multiply;
+  color: whitesmoke;
+  min-height: 100svh;
+  position: relative;
+}
+
+button {
+  appearance: none;
+  background-color: $primary-color;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Oswald-bold";
+  font-size: 1rem;
+  line-height: 1rem;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+    background-color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+    color 100ms cubic-bezier(0.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+button:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: $accent-color;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+    -webkit-clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+button:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+button span {
+  z-index: 1;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  padding: 20px 40px;
+  h1 {
+    font-size: $header-font-size;
+    font-family: "Oswald-Bold";
+  }
+
+  nav {
+    font-size: $header-font-size;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+
+  button {
+    background-color: transparent;
+    color: whitesmoke;
+    font-size: $font-size;
+    padding: 0.6rem;
+  }
+}
+
+#content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90svh;
+  height: 90vh;
+  position: relative;
+  padding: 20px 40px;
+}
+
+#homePage {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .homePage-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+}
+
+#contactUsPage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 2rem;
+
+  h1 {
+    font-size: $h1-size;
+    font-family: "OsWald-light";
+  }
+
+  div {
+    display: grid;
+    align-content: center;
+  }
+
+  img {
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    border: 2px solid black;
+  }
+
+  form {
+    padding: 2.5rem;
+  }
+
+  .contacts {
+    display: grid;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
